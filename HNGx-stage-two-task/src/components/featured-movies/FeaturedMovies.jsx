@@ -22,14 +22,14 @@ function FeaturedMovies() {
 				</div>
 			</div>
 			<div className="movie__container">
-				{movies.map((movie) => (
+				{movies.map((movie, i) => i <= 10?  (
 					<Card
 						image={movie.poster_path}
 						title={movie.title}
 						date={movie.release_date}
                         id={movie.id}
 					/>
-				))}
+				): null)}
 			</div>
 		</section>
 	);
