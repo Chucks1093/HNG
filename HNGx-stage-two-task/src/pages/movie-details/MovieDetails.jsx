@@ -7,12 +7,22 @@ import { useContext, useEffect, useState } from "react";
 function MovieDetails() {
 	const { movies } = useContext(MovieContext);
 	const [movie, setMovie] = useState({});
+	const [date, setDate] = useState("Fri, 28 Jul 2023 00:00:00 GMT");
 	const { id } = useParams();
 
 	useEffect(() => {
-		const item = movies.filter((item) => item.id == id) ;
-        console.log(item)
-        setMovie(item.shift())
+		const item = movies.filter((item) => item.id == id);
+		const inputDate = new Date(movie.release_date);
+		const utcDate = new Date(
+			Date.UTC(
+				inputDate.getUTCFullYear(),
+				inputDate.getUTCMonth(),
+				inputDate.getUTCDate()
+			)
+		);
+
+		setDate(utcDate.toUTCString());
+		setMovie(item.shift());
 	}, []);
 
 	return (
@@ -36,12 +46,10 @@ function MovieDetails() {
 							src="/icons/imob.svg"
 							alt=""
 						/>
-						<span className="movie__time">{`${movie.release_date} • 23m`}</span>
+						<span className="movie__time">{`${date} • 23m`}</span>
 					</div>
 					<h3>Overview</h3>
-					<p className="overview">
-						{movie.overview}
-					</p>
+					<p className="overview">{movie.overview}</p>
 				</div>
 			</div>
 		</div>
