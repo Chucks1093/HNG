@@ -41,16 +41,17 @@ function MovieDetails() {
 					className="movie__poster"
 				/>
 				<div>
-					<h1 className="movie__title">{movie.original_title}</h1>
+					<h1 className="movie__title" data-testid="movie-title">{movie.original_title}</h1>
 					<div>
 						<img
 							src="/icons/imob.svg"
 							alt=""
 						/>
-						<span className="movie__time">{`${date} • 23m`}</span>
+						<span 
+                        data-testid="movie-release-date" className="movie__time">{`${date} • 23m`}</span>
 					</div>
 					<h3>Overview</h3>
-					<p className="overview">{movie.overview}</p>
+					<p data-testid="movie-overview" className="overview">{movie.overview}</p>
 				</div>
 			</div>
 		</div>
