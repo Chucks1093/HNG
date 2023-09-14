@@ -45,7 +45,7 @@
         z-index: -1;
         top: 0;
         left: 0;
-        filter: brightness(0.5);
+        filter: brightness(0.3);
     }
 
     & .movie__title {
@@ -71,6 +71,7 @@
         width: 68%;
         min-width: 15rem;
         font-size: 1.05rem;
+        line-height: 1.7;
     }
 
 

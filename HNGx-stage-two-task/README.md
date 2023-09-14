@@ -1,7 +1,7 @@
 
 # MovieBox
 
-This project was bootstrapped with Vite.
+This movie project  which was bootstrapped with Vite.
 
 ## Getting Started
 

@@ -12,17 +12,18 @@ function MovieDetails() {
 
 	useEffect(() => {
 		const item = movies.filter((item) => item.id == id);
-		const inputDate = new Date(movie.release_date);
+        const firstItem = item.shift();
+		const inputDate = new Date(firstItem.release_date);
 		const utcDate = new Date(
 			Date.UTC(
 				inputDate.getUTCFullYear(),
-				inputDate.getUTCMonth(),
+				inputDate.getUTCMonth(),    
 				inputDate.getUTCDate()
 			)
 		);
 
 		setDate(utcDate.toUTCString());
-		setMovie(item.shift());
+		setMovie(firstItem);
 	}, []);
 
 	return (

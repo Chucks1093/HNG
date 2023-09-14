@@ -1,0 +1,16 @@
+.error__page {
+    margin: 10vh auto 1rem;
+    width: 60%;
+    height: 100vh;
+
+    & img {
+        height: 70%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    & p {
+        text-align: center;
+    }
+
+}
