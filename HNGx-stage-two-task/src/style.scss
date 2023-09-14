@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -moz-osz-font-smoothing: grayscale;
+}
+
+@font-face {
+    font-family: "Inter-Semibold";
+    src: url('/fonts/Inter-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: "Montserrat-bold";
+    src: url('/fonts/Montserrat-Bold.ttf');
+}
+
+@font-face {
+    font-family: "Inter-Regular";
+    src: url('/fonts/Inter-Regular.ttf');
+}

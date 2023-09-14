@@ -1,0 +1,25 @@
+.header {
+    position: absolute;
+    width: 90%;
+    height: 11vh;
+    top: 0;
+    left: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateX(-50%);
+    color: white;
+}
+
+.logo__container { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .4rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    & .logo {
+        height: 3.3rem;
+    }
+}

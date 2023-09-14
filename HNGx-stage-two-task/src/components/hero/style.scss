@@ -1,0 +1,87 @@
+.hero {
+    height: 100vh;
+    position: relative;
+    padding: 0 2.5rem;
+
+    & .banner {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        filter: brightness(0.5);
+    }
+}
+
+.hero__details {
+    top: 50%;
+    left: 5%;
+    // width: 44%;
+    min-width: 18rem;
+    position: absolute;
+    transform: translateY(-42%);
+    color: white;
+
+    & h1 {
+        font-family: "Montserrat-bold";
+        font-size: 4.6rem;
+        width: 59%;
+    }
+
+    & div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "Inter-Semibold";
+        margin-top: .5rem;
+        width: 20%;
+
+        span {
+            font-weight: bold;
+        }
+
+        .imob {
+            height: 1.5rem;
+        }
+
+        .tomatoes {
+            margin-right: .5rem;
+            height: 1.5rem;
+
+        }
+
+        .imob__rate {
+            margin-right: auto;
+            margin-left: .5rem;
+        }
+
+    
+    }
+
+
+    & p {
+        margin-top: 1rem;
+        font-size: 1.03rem;
+        width: 50%;
+    }
+    & button {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #BE123C;
+        color: white;
+        width: 11rem;
+        height: 3.4rem;
+        border-radius: .8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .3rem;
+        margin-top: .9rem;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+        font-size: 1.01rem;
+        
+    }
+}

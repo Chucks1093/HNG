@@ -1,0 +1,77 @@
+.movie__details {
+    height: 100vh;
+    color: white;
+    & .header {
+        color: black;
+        position: relative;
+    }
+
+    & .movie__showcase {
+        height: 89vh;
+        position: relative;
+        display: flex;
+        padding: 4rem 3.9rem;
+        gap: 3rem;
+
+        & > div {
+            margin-top: 3.3rem;
+
+            & img {
+                width: 2.5rem;
+
+            }
+
+            & div {
+                display: flex;
+                align-items: center;
+                gap: .7rem;
+                margin-top: .5rem;
+            }
+        }
+
+        & h3 {
+            font-size: 1.6rem;
+            margin-top: 1.2rem;
+            margin-bottom: .5rem;
+            font-weight: bold;
+        }
+    }
+
+    & .bg {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        filter: brightness(0.5);
+    }
+
+    & .movie__title {
+        font-size: 4rem;
+        width: 80%;
+        line-height: 1.1;
+    }
+
+    & .movie__time {
+        font-size: .95rem;
+        font-weight: 500;
+    }
+
+    & .movie__poster {
+        width: 20rem;
+        height: 100%;
+        border-radius: .9rem;
+        object-fit: cover;
+        box-shadow: 0 .7rem 2rem black;
+    }
+
+    & .overview {
+        width: 68%;
+        min-width: 15rem;
+        font-size: 1.05rem;
+    }
+
+
+}

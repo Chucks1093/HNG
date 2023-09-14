@@ -1,0 +1,29 @@
+.search__bar {
+    width: 45%;
+    min-width: 29rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 2rem;
+
+    & input {
+        width: 100%;
+        background-color: transparent;
+        color: white;
+        height: 100%;
+        border-radius: .8rem;
+        border: 1.5px solid white;
+        padding: 0 1rem;
+    }
+
+    & .search__icon {
+        position: absolute;
+        right: 0%;
+        cursor: pointer;
+        // background-color: red;
+        padding: .42rem 0;
+        height: 100%;
+        width: 3rem;
+    }
+}

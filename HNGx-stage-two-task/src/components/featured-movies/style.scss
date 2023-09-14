@@ -1,0 +1,36 @@
+.featured__movies { 
+    width: 90%;
+    margin: 3.5rem auto 2rem;
+}
+.section__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .3rem;
+
+        & span {
+            color: #BE123C;
+        }
+
+        & img {
+            width: 1.5rem;
+        }
+    }
+}
+
+.movie__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    margin: 2rem auto 1rem;
+    row-gap: 2.5rem;
+    grid-row: auto;
+    grid-column: auto;
+    justify-content: space-between;
+    grid-auto-rows: auto;
+    justify-content: space-between;
+}
