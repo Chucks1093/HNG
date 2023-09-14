@@ -3,12 +3,9 @@ import Card from "../card/Card";
 import "./style.scss";
 import { MovieContext } from "../../MovieContext";
 
-
-
 function FeaturedMovies() {
-	const { movies }= useContext(MovieContext);
+	const { movies } = useContext(MovieContext);
 
-	
 	return (
 		<section className="featured__movies">
 			<div className="section__header">
@@ -22,14 +19,16 @@ function FeaturedMovies() {
 				</div>
 			</div>
 			<div className="movie__container">
-				{movies.map((movie, i) => i <= 10?  (
-					<Card
-						image={movie.poster_path}
-						title={movie.title}
-						date={movie.release_date}
-                        id={movie.id}
-					/>
-				): null)}
+				{movies.map((movie, i) =>
+					i <= 10 ? (
+						<Card
+							image={movie.poster_path}
+							title={movie.title}
+							date={movie.release_date}
+							id={movie.id}
+						/>
+					) : null
+				)}
 			</div>
 		</section>
 	);
