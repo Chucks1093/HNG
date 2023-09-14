@@ -1,11 +1,11 @@
 .search__bar {
-    width: 45%;
+    width: 55%;
     min-width: 29rem;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 2rem;
+    height: 1.9rem;
     
 
     & input {
@@ -23,7 +23,7 @@
         right: 0%;
         cursor: pointer;
         // background-color: red;
-        padding: .42rem 0;
+        padding: .5rem 0;
         height: 100%;
         width: 3rem;
     }
