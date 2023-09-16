@@ -2,7 +2,7 @@ import { Fragment, useEffect, useState } from "react";
 import "./style.scss";
 
 function MovieInfo({ movie, date }) {
-
+	
     
     
 	return (
