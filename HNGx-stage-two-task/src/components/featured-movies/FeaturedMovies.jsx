@@ -20,7 +20,7 @@ function FeaturedMovies() {
 			</div>
 			<div className="movie__container">
 				{movies.map((movie, i) =>
-					i <= 10 ? (
+					i <= 9 ? (
 						<Card
 							image={movie.poster_path}
 							title={movie.title}
