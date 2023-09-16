@@ -3,55 +3,66 @@ import Header from "../../components/header/Header";
 import "./style.scss";
 import { MovieContext } from "../../MovieContext";
 import { useContext, useEffect, useState } from "react";
+import SideBar from "../../components/side-bar/SideBar";
+import MovieInfo from "../../components/movie-info/MovieInfo";
+import MovieOptions from "../../components/movie-options/MovieOptions";
 
 function MovieDetails() {
-	const { movies } = useContext(MovieContext);
 	const [movie, setMovie] = useState({});
 	const [date, setDate] = useState("Fri, 28 Jul 2023 00:00:00 GMT");
 	const { id } = useParams();
 
 	useEffect(() => {
-		const item = movies.filter((item) => item.id == id);
-        const firstItem = item.shift();
-		const inputDate = new Date(firstItem.release_date);
-		const utcDate = new Date(
-			Date.UTC(
-				inputDate.getUTCFullYear(),
-				inputDate.getUTCMonth(),    
-				inputDate.getUTCDate()
-			)
-		);
+		const options = {
+			method: "GET",
+			headers: {
+				accept: "application/json",
+				Authorization:
+					"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMGE0YjBkYWM2NDk5YTIxNWJjOGYxZjg1NDEzMTcyOCIsInN1YiI6IjY0ZmZkOGMwMGJiMDc2MDBjNGEwZjRjNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Sq27Ut2tg23Vw-mt4XgIhxQAS3K2Ok8mglG2wrZqo90",
+			},
+		};
 
-		setDate(utcDate.toUTCString());
-		setMovie(firstItem);
+		fetch(
+			`https://api.themoviedb.org/3/movie/${id}?language=en-US`,
+			options
+		)
+			.then((response) => response.json())
+			.then((response) => {
+				setMovie(response);
+				const inputDate = new Date(response.release_date);
+				const utcDate = new Date(
+					Date.UTC(
+						inputDate.getUTCFullYear(),
+						inputDate.getUTCMonth(),
+						inputDate.getUTCDate()
+					)
+				);
+				setDate(utcDate.toUTCString());
+			})
+			.catch((err) => console.error(err));
 	}, []);
 
 	return (
 		<div className="movie__details">
-			<Header />
+			<SideBar />
 			<div className="movie__showcase">
-				<img
-					src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
-					alt={movie.backdrop_path}
-					className="bg"
-				/>
-				<img
-					src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-					alt=""
-					className="movie__poster"
-				/>
-				<div>
-					<h1 className="movie__title" data-testid="movie-title">{movie.original_title}</h1>
-					<div>
-						<img
-							src="/icons/imob.svg"
-							alt=""
-						/>
-						<span 
-                        data-testid="movie-release-date" className="movie__time">{`${date} • 23m`}</span>
-					</div>
-					<h3>Overview</h3>
-					<p data-testid="movie-overview" className="overview">{movie.overview}</p>
+				<div className="trailer__container">
+					<img
+						src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+						alt={movie.backdrop_path}
+						className="bg"
+					/>
+					<img
+						src="/icons/play_btn.svg"
+						alt="playbtn"
+						className="play__btn"
+					/>
+					<p>Watch Trailer</p>
+				</div>
+				<div className="movie__info__container">
+
+				<MovieInfo movie={movie} date={date} />
+				<MovieOptions />
 				</div>
 			</div>
 		</div>

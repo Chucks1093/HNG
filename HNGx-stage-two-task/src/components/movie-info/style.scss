@@ -1,0 +1,64 @@
+.movie__info {
+    margin-top: 2rem;
+    padding: 0 1.5rem   ;
+    & > span {
+        font-size: 1.2rem;
+        font-family: 'Poppins-R';
+        margin-right: .7rem;
+    }
+
+    & .overview {
+        font-size: 1.2rem;
+        margin-top: 2rem;
+    }
+
+    & .movie__workers {
+        margin-top: 2rem;
+        & p {
+            font-family: "Poppins-R";
+            font-size: 1.3rem;
+            margin-bottom: .9rem;
+            
+            & span {
+                color: #BE123C;
+            }
+        }
+
+    }
+}
+
+.movie__awards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+    height: 3rem;
+    border-radius: 10px;
+    border: 1px solid gray;
+
+    & button {
+        width: 16rem;
+        height: 100%;
+        border-radius: 10px;
+        background-color: #BE123C;
+        font-family: "Poppins-R";
+        font-size: 1.15rem;
+        border: none;
+        color: white;
+    }
+
+    & p {
+        margin-right: auto;
+        margin-left: .8rem;
+        font-family: "Poppins-R";
+        font-size: 1.15rem;
+    }
+
+    & img {
+        height: 45%;
+        font-family: "Poppins-R";
+        font-size: 1.15rem;
+        margin-right: 1rem;
+    }
+}
+
