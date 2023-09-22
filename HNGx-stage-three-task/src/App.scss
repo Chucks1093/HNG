@@ -1,0 +1,41 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+	& img {
+		display: block;
+	}
+
+}
+
+#root {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+
+}
+
+li {
+	// border: 1px solid firebrick;
+	display: flex;
+	flex-shrink: 0;
+}
+ul {
+	// border: 3px solid greenyellow;
+}
+
+// :root {
+// 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+// 	font-synthesis: none;
+// 	text-rendering: optimizeLegibility;
+// 	-webkit-font-smoothing: antialiased;
+// 	-moz-osx-font-smoothing: grayscale;
+// 	-webkit-text-size-adjust: 100%;
+// }

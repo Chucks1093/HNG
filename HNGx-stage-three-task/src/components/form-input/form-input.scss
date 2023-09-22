@@ -1,0 +1,26 @@
+
+.form__input {
+    position: relative;
+
+    & label {
+        display: block;
+        color: rgb(182, 182, 182);
+        font-size: 0.75rem;
+        margin: 1.4rem 0 0.7rem 0;
+        text-transform: capitalize;
+    }
+
+    & input {
+        height: 2.7rem;
+        text-indent: 1.2rem;
+        font-size: 0.7rem;
+        width: 100%;
+        border-radius: 0.3rem;
+        border: 2px solid #c2bbbb;
+
+        &::placeholder {
+            color: rgb(192, 191, 191);
+            display: none;
+        }
+    }
+}

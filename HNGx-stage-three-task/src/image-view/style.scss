@@ -1,0 +1,25 @@
+.cancel {
+    width: 3rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    background-color: #d7d3cf;
+    opacity: 0.7;
+    padding: .5rem;
+    cursor: pointer;
+
+}
+
+.view {
+    width: 50%;
+    height: 80%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 1rem;
+
+    transform: translate(-50%, -50%);
+    
+}

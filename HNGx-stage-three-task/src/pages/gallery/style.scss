@@ -1,0 +1,28 @@
+.gallery {
+	padding: 4rem 1rem 2rem;
+	position: relative;
+
+	& > h1 {
+		text-align: center;
+		font-size: 4rem;
+	}
+
+	&::after {
+		content: "";
+		width: 100%;
+		position: fixed;
+		bottom: 0;
+		background-image: linear-gradient(transparent, #0000007e);
+
+		left: 0;
+		height: 8rem;
+	}
+}
+.photos {
+	padding: 3rem 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+	grid-row: auto;
+	gap: 0.8rem;
+}
+ 

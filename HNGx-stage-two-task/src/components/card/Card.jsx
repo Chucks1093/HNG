@@ -37,7 +37,7 @@ function Card(props) {
 				<img
 					src="/icons/imob.svg"
 					alt="imob"
-				/>
+				/>	
 				<span data-testid="movie-release-date">{props.date}</span>
 			</div>
 		</div>

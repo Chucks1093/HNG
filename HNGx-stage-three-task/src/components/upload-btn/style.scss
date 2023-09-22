@@ -1,0 +1,21 @@
+.upload__btn {
+    position: relative;
+    $size:3.7rem;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    padding: 1rem;
+    background-color: #131313fb;
+    position: fixed;
+    bottom: 6%;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 1;
+
+    &:active {
+        background-color: #262626fb;
+    }
+
+
+}
