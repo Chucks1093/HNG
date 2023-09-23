@@ -4,6 +4,8 @@ import Photo from "../../components/photo/Photo";
 import Modal from "../../image-view/ImageView";
 import Upload from "../../components/upload/Upload";
 import { Reorder } from "framer-motion";
+import { DndContext, closestCenter } from "@dnd-kit/core";
+import { SortableContext } from "@dnd-kit/sortable";
 
 function Gallery() {
 	const [photosArr, setPhotosArr] = useState([]);
@@ -15,14 +17,23 @@ function Gallery() {
 		setPhotosArr(value);
 	}, []);
 
+	const dragEnd = e => {
+		console.log(e.target)
+	}
+
 	return (
 		<div className="gallery">
 			<h1>My Gallery</h1>
-			<Reorder.Group axis="x" values={photosArr} onReorder={setPhotosArr} className="photos">
+			<div className="photos">
+
+			<DndContext onDragEnd={dragEnd}>
+				<SortableContext items={photosArr}>
 				{photosArr.map((item, i) => (
 					<Photo key={i} index={i} />
 				))}
-			</Reorder.Group>
+				</SortableContext>
+			</DndContext>
+			</div>
 			<Modal />
 			<Upload />
 		</div>

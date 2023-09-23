@@ -1,29 +1,30 @@
 import { Fragment, useEffect, useState } from "react";
 import "./style.scss";
 import months from "../../utils/months";
-import { motion, useMotionValue, Reorder } from "framer-motion";
+import { motion, useMotionValue, Reorder, transform } from "framer-motion";
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+import { useDraggable } from "@dnd-kit/core";
+
 
 function Photo({ index }) {
-	const y = useMotionValue(0);
+	const {attributes, listeners, setNodeRef, transition} = useSortable({id : index});
+	const style = {
+		transition,
+		transform: CSS.Transform.toString(transform),
+	}
 	return (
 		<Fragment>
 			{index % 20 == 0 ? (
 				<p className="divider">{months[index / 20]}</p>
 			) : null}
-			<Reorder.Item
-				id={index}
-				value={index}
-				style={{ y }}
-				drag
-
-			>
-				<motion.img
+				<img 
+				ref={setNodeRef} {...attributes} {...listeners}
 					className="photo"
 					src={`/photo/photo-${index}.jpg`}
 					alt={index}
-					drag
+					style={style}
 				/>
-			</Reorder.Item>
 		</Fragment>
 	);
 }

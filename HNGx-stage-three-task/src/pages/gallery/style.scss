@@ -13,7 +13,6 @@
 		position: fixed;
 		bottom: 0;
 		background-image: linear-gradient(transparent, #0000007e);
-
 		left: 0;
 		height: 8rem;
 	}
@@ -24,5 +23,18 @@
 	grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
 	grid-row: auto;
 	gap: 0.8rem;
+}
+
+@media screen and (max-width: 800px) {
+
+	.gallery {
+
+		& > h1 {
+			font-size: 2rem;
+		}
+	}
+	.photos {
+		grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+	}
 }
  

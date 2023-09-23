@@ -8,28 +8,31 @@ import { useNavigate } from "react-router-dom";
 
 function Login() {
 	const navigate = useNavigate();
-	
+
 	const [inputValue, setInputValue] = useState({
-		email : "",
-		password: ""
+		email: "",
+		password: "",
 	});
 
 	const signInUser = (e) => {
 		e.preventDefault();
+		const authBtn = e.currentTarget.querySelector(".auth__submit__btn");
 		const email = inputValue.email;
 		const password = inputValue.password;
 		const auth = getAuth(app);
-		console.log(email, password)
+		authBtn.disabled = true;
+		console.log(email, password);
 		signInWithEmailAndPassword(auth, email, password)
 			.then((userCredential) => {
 				// Signed in
 				const user = userCredential.user;
-				navigate("/gallery")
+				navigate("/gallery");
 				// ...
 			})
 			.catch((error) => {
 				const errorCode = error.code;
 				const errorMessage = error.message;
+				alert(errorMessage);
 			});
 	};
 
@@ -56,7 +59,7 @@ function Login() {
 						value={inputValue.password}
 						required
 					/>
-					<AuthButtons >Login</AuthButtons>
+					<AuthButtons>Login</AuthButtons>
 					<label className="auth__label">
 						Don't have an account ?
 						<Link to="/register">Sign Up</Link>

@@ -6,6 +6,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import app from "../../utils/firebase";
 
+
 function Register() {
 	const navigate = useNavigate();
 
@@ -31,6 +32,7 @@ function Register() {
 			.catch((error) => {
 				const errorCode = error.code;
 				const errorMessage = error.message;
+				alert(errorMessage)
 				// ..
 			});
 	};
